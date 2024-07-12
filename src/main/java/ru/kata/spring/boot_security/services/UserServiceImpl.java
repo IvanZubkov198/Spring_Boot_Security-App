@@ -3,6 +3,7 @@ package ru.kata.spring.boot_security.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.kata.spring.boot_security.models.Role;
 import ru.kata.spring.boot_security.models.User;
 import ru.kata.spring.boot_security.repositories.RoleRepository;
@@ -16,6 +17,7 @@ import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -38,6 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean saveUser(User user) {
 
         Optional<User> userFromDB = userRepository.findById(user.getId());
@@ -52,6 +55,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean registerUser(User user) {
 
         Set<Role> roles = Stream.of(roleRepository.findById(1L)
@@ -68,6 +72,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean updateUser(User user) {
 
         Optional<User> userFromDB = userRepository.findById(user.getId());
@@ -86,6 +91,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean deleteById(Long id) {
         if (userRepository.findById(id).isPresent()) {
 
