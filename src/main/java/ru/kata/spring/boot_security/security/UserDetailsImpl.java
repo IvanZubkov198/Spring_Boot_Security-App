@@ -1,5 +1,6 @@
 package ru.kata.spring.boot_security.security;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,9 +9,11 @@ import ru.kata.spring.boot_security.models.User;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+@Getter
 public class UserDetailsImpl implements UserDetails {
 
     private final User user;
+
 
 
     public UserDetailsImpl(User user) {
@@ -20,9 +23,8 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName()))
-                .collect(Collectors.toSet());
+        return user.getRoles().stream().map(role -> new SimpleGrantedAuthority(new GrantedAuthorityImpl(role).getAuthority()))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -55,7 +57,4 @@ public class UserDetailsImpl implements UserDetails {
         return true;
     }
 
-    public User getUser() {
-        return this.user;
-    }
 }

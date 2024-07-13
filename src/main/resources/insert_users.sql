@@ -5,3 +5,5 @@
 -- INSERT INTO users_roles VALUES (1, 1);
 -- INSERT INTO users_roles VALUES (2, 1);
 -- INSERT INTO users_roles VALUES (2, 2);
+
+# Password for users equals his usernames

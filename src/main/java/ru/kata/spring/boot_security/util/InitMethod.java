@@ -1,7 +1,6 @@
 package ru.kata.spring.boot_security.util;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ru.kata.spring.boot_security.models.Role;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class InitDataBase {
+public class InitMethod {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
