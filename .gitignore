@@ -6,7 +6,7 @@ target
 *.iml
 *.ipr
 /mvnw.cmd
-/.mvn
+/.mvn/
 /mvnw
 
 ### NetBeans ###
@@ -21,4 +21,3 @@ build/
 
 ### VS Code ###
 .vscode/
-/.mvn/
