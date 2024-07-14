@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import ru.kata.spring.boot_security.models.User;
+import ru.kata.spring.boot_security.entities.User;
 import ru.kata.spring.boot_security.services.RoleService;
 import ru.kata.spring.boot_security.services.UserService;
 
@@ -57,7 +57,6 @@ public class AdminController {
 
     @PutMapping()
     public String updateUser(@ModelAttribute("user") User user, Model model) {
-
         System.out.println(user.getRoles());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         if (!userService.updateUser(user)) {
@@ -68,7 +67,6 @@ public class AdminController {
 
     @DeleteMapping()
     public String delete(@RequestParam(value = "id") long id, Model model) {
-
         if (!userService.deleteById(id)) {
             model.addAttribute("deleteUserError", "Не удалось удалить пользователя");
         }

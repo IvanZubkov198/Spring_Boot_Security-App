@@ -1,7 +1,7 @@
-package ru.kata.spring.boot_security.security;
+package ru.kata.spring.boot_security.configs.security;
 
 import org.springframework.security.core.GrantedAuthority;
-import ru.kata.spring.boot_security.models.Role;
+import ru.kata.spring.boot_security.entities.Role;
 
 public class GrantedAuthorityImpl implements GrantedAuthority {
 

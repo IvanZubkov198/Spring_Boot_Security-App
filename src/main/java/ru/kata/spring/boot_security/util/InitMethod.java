@@ -3,8 +3,8 @@ package ru.kata.spring.boot_security.util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import ru.kata.spring.boot_security.models.Role;
-import ru.kata.spring.boot_security.models.User;
+import ru.kata.spring.boot_security.entities.Role;
+import ru.kata.spring.boot_security.entities.User;
 import ru.kata.spring.boot_security.repositories.UserRepository;
 
 import javax.annotation.PostConstruct;

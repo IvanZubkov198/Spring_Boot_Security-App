@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.models;
+package ru.kata.spring.boot_security.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

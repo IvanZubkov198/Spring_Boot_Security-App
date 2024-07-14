@@ -1,7 +1,7 @@
 package ru.kata.spring.boot_security.services;
 
 
-import ru.kata.spring.boot_security.models.User;
+import ru.kata.spring.boot_security.entities.User;
 
 import java.util.List;
 import java.util.Optional;

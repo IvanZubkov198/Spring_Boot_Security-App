@@ -1,10 +1,10 @@
-package ru.kata.spring.boot_security.security;
+package ru.kata.spring.boot_security.configs.security;
 
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.kata.spring.boot_security.models.User;
+import ru.kata.spring.boot_security.entities.User;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
