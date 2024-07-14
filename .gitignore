@@ -5,9 +5,9 @@ target
 *.iws
 *.iml
 *.ipr
-/mvnw.cmd
 /.mvn/
 /mvnw
+/mvnw.cmd/
 
 ### NetBeans ###
 /nbproject/private/
